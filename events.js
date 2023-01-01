@@ -23,7 +23,14 @@ input.addEventListener("click", function (event) {
         state[1] = null;
         state[2] = null;
         display.innerText = state[0];
-    } else if (!isNaN(parseInt(clicked))) {
+    } else if (clicked == '←') {
+        if (state[1] == null) {
+            display.innerText = 0;
+        } else {
+            state[1] = state[1].slice(0,-1);
+            display.innerText = state[1];
+        }
+    }else if (!isNaN(parseInt(clicked))) {
         if (state[1] == null) {
             state[1] = clicked;
             display.innerText = state[1];
